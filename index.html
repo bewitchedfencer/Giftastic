@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand navbar-left" href="https://www.giphy.com" target="_blank">
+                    <img id="logo" class="img-thumbnail img-responsive" src="assets/images/powered_by_GIPHY.gif" alt="GIPHY logo and website">
+                </a>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" id="searchLOTR">
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <div id="button-holder">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button class="btn btn-danger buttons" data-name="gollem">Gollem</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="samwise gamgee">Samwise</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="frodo baggins">Frodo</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="merry brandybuck">Merry</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="pippin took">Pippin</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="aragon">Aragon</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="gimli">Gimli</button>
+                </div>
+            </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                    <button class="btn btn-danger buttons" data-name="legolas">Legolas</button>
+                </div>
+            </div>
+                </div>
+            </div>
+            <div class="col-xs-8">
+                <div id="gif-holder"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="assets/js/api.js"></script>
+</body>
+
+</html>

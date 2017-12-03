@@ -1,0 +1,16 @@
+#logo{
+    height:180%;
+    width:60%;
+    margin-top:-10px;
+}
+
+body{
+    height:100%;
+    background-color:black;
+    background-image: url(../images/LOTR_background.jpg);
+    background-size:cover;
+}
+
+#button-holder{
+    margin-top: 60px;
+}
