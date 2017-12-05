@@ -1,15 +1,6 @@
-//the ajax request for clicking the submit button
-//whatever is searched is added to the button array (of topics)
-//the rating is also added
 
-//don't forget event.preventDefault
-
-
-//the function for making the buttons from the array of topics
-//declaring the topics array
 var topics = ["gandalf", "legolas", "frodo", "bilbo"];
-var move = "still";
-var queryURL= "https://www.api.giphy.com/v1/gifs/search";
+var queryURL= "https://api.giphy.com/v1/gifs/search";
 
 $(document).ready(function(){
     
@@ -35,26 +26,58 @@ $("#searchButton").on("click", function() {
     console.log("working");
 //this should be part of the search button function
 topics.forEach(renderButtons);
+$("#searchLOTR").val(" ");
+$("#gif-holder").empty();
 })
 
-$(".buttons").on("click", function(){
+function displayLOTR(){
     var character = $(this).attr("data-name");
+    console.log(character);
     $.ajax({
         url: queryURL,
         method: "GET",
         data: {
-            q: character,
-            api_key: "IZx0lnfBRUPnZ9Qw7iv7hFslwjN4UmGI",
-            limit: 10
-        }
+            q:character,
+            limit:10,           
+            api_key: "dc6zaTOxFJmzC",
+        }        
     }).done(function(response){
-        console.log(response.data[0].rating);
-
+        for(var i=0; i<10; i++){
+        var gifDiv = $("<div>");
+        
+        var rating = $("<p>");
+        rating.text(`Rating: ${response.data[i].rating}`);
+        gifDiv.append(rating);
+        var imgURL = response.data[i].images.downsized_still.url;
+        var image = $("<img>").attr("src", imgURL);
+        image.attr("img-animate", response.data[i].images.downsized.url);
+        image.attr("img-still",response.data[i].images.downsized_still.url);
+        image.attr("toggle-animation", "still");
+        image.addClass("gifs");
+        image.addClass("img-responsive");
+        gifDiv.append(image);
+        $("#gif-holder").prepend(gifDiv);
+        }
     })
-})
+};
+
+function changeGIF(){
+    var state = $(this).attr("toggle-animation");
+    if(state==="still"){
+        $(this).attr("toggle-animation", "animate");
+        $(this).attr("src", $(this).attr("img-animate"));
+        console.log($(this).attr("src"));
+    }
+    if(state==="animate"){
+        $(this).attr("toggle-animation", "still");
+        $(this).attr("src", $(this).attr("img-still"));
+    }
+};
 
 topics.forEach(renderButtons);
 
-
+$(document).on("click", ".buttons", displayLOTR);
+$(document).on("click", ".gifs", changeGIF);
+    
 
 });

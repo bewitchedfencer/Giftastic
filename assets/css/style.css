@@ -15,3 +15,17 @@ body{
     margin-top: 60px;
     margin-left:5%;
   }
+
+  #gif-holder{
+      display:flex;
+      flex-direction:row;
+      flex-wrap:wrap;
+      font-size:20px;
+      color:black;
+  }
+
+  .gifs{
+      margin:5px;
+      width:250px;
+      height:200px;
+  }
