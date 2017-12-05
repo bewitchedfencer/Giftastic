@@ -55,7 +55,7 @@ function displayLOTR(){
         data: {
             q:character,
             limit:10,           
-            api_key: "dc6zaTOxFJmzC",
+            api_key: "IZx0lnfBRUPnZ9Qw7iv7hFslwjN4UmGI",
         }        
     }).done(function(response){
         //a for loop for creating the gifs 
